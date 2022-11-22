@@ -13,39 +13,39 @@ const questions = [{
 }, {
     type : "input",
     message : "What is the project about?",
-    name: "discription",
+    name: "description",
 }, {
-    type : "input",
-    message : "Table of contents",
-    name : "Table of contents",
-}, {
+
     type : "input",
     message : "How do I run this app?",
-    name: "Installation",
+    name: "installation",
 }, {
-    type : "input",
+    type : "list",
     message : "What license is being used? (ie: MIT)",
-    name: "License",
+    name: "license",
+    choices: [
+        "MIT", "APACHE", "GNU"
+    ]
 }, {
     type : "input",
     message : "What commands are needed to test this app?",
-    name : "Test",
+    name : "test",
 }, {
     type : "input",
     message : "What is you GitHub username?",
-    name : "Username",
+    name : "username",
 
 }, {
     type : "input",
     message : "What is your email?",
-    name : "Email",
+    name : "email",
 }
 ];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
 
-    fs.writeToFile(fileName,data, function(err){
+    fs.writeFile(fileName,data, function(err){
         console.log(fileName)
         console.log(data)
         if(err){
